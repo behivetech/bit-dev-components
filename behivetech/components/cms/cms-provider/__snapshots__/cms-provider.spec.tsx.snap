@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CmsProvider should add a block 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      Header Component Content
+    </h1>
+  </header>
+  <main>
+    <div>
+      <div>
+        This is a composition of functionality and content to test out the CmsProvider component.
+      </div>
+      <div
+        data-testid="button-actions"
+      >
+        <button
+          data-testid="addBlock"
+        >
+          Add Block
+        </button>
+        <button
+          data-testid="editBlock"
+        >
+          Toggle Edit Block
+        </button>
+        <button
+          data-testid="removeBlock"
+        >
+          Remove Added Block
+        </button>
+        <button
+          data-testid="updateBlock"
+        >
+          Update Block
+        </button>
+      </div>
+    </div>
+    Main Component Content
+  </main>
+  <div
+    data-testid="addedBlock"
+  >
+    Added Block
+  </div>
+  <footer>
+    Footer Component Content
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`CmsProvider should remove a block 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      Header Component Content
+    </h1>
+  </header>
+  <main>
+    <div>
+      <div>
+        This is a composition of functionality and content to test out the CmsProvider component.
+      </div>
+      <div
+        data-testid="button-actions"
+      >
+        <button
+          data-testid="addBlock"
+        >
+          Add Block
+        </button>
+        <button
+          data-testid="editBlock"
+        >
+          Toggle Edit Block
+        </button>
+        <button
+          data-testid="removeBlock"
+        >
+          Remove Added Block
+        </button>
+        <button
+          data-testid="updateBlock"
+        >
+          Update Block
+        </button>
+      </div>
+    </div>
+    Main Component Content
+  </main>
+  <footer>
+    Footer Component Content
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`CmsProvider should render edit content 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      Header Component Content
+    </h1>
+  </header>
+  <main>
+    <div>
+      <div>
+        This is a composition of functionality and content to test out the CmsProvider component.
+      </div>
+      <div
+        data-testid="button-actions"
+      >
+        <button
+          data-testid="addBlock"
+        >
+          Add Block
+        </button>
+        <button
+          data-testid="editBlock"
+        >
+          Toggle Edit Block
+        </button>
+        <button
+          data-testid="removeBlock"
+        >
+          Remove Added Block
+        </button>
+        <button
+          data-testid="updateBlock"
+        >
+          Update Block
+        </button>
+        <div>
+          Edit Drawer Details
+        </div>
+      </div>
+    </div>
+    Main Component Content
+  </main>
+  <footer>
+    Footer Component Content
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`CmsProvider should render with the correct content 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      Header Component Content
+    </h1>
+  </header>
+  <main>
+    <div>
+      <div>
+        This is a composition of functionality and content to test out the CmsProvider component.
+      </div>
+      <div
+        data-testid="button-actions"
+      >
+        <button
+          data-testid="addBlock"
+        >
+          Add Block
+        </button>
+        <button
+          data-testid="editBlock"
+        >
+          Toggle Edit Block
+        </button>
+        <button
+          data-testid="removeBlock"
+        >
+          Remove Added Block
+        </button>
+        <button
+          data-testid="updateBlock"
+        >
+          Update Block
+        </button>
+      </div>
+    </div>
+    Main Component Content
+  </main>
+  <footer>
+    Footer Component Content
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`CmsProvider should update a block 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      Header Component Content
+    </h1>
+  </header>
+  <main>
+    <div>
+      <div>
+        This is a composition of functionality and content to test out the CmsProvider component.
+      </div>
+      <div
+        data-testid="button-actions"
+      >
+        <button
+          data-testid="addBlock"
+        >
+          Add Block
+        </button>
+        <button
+          data-testid="editBlock"
+        >
+          Toggle Edit Block
+        </button>
+        <button
+          data-testid="removeBlock"
+        >
+          Remove Added Block
+        </button>
+        <button
+          data-testid="updateBlock"
+        >
+          Update Block
+        </button>
+      </div>
+    </div>
+    Main Block Updated
+  </main>
+  <footer>
+    Footer Component Content
+  </footer>
+</DocumentFragment>
+`;

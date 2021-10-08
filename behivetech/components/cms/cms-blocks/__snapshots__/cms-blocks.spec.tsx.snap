@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with the correct content 1`] = `
+<DocumentFragment>
+  <div>
+    Imported Block 1
+  </div>
+  <div>
+    Imported Block 2
+  </div>
+  <div>
+    Imported Block 3
+  </div>
+  <div>
+    Imported Block 4
+  </div>
+  <div
+    class="cms-block-missing"
+    style="background-color: rgb(153, 0, 0); color: rgb(255, 255, 255);"
+  >
+    COMPONENT IMPORT ERROR: The MockImportedComponent5 Componpent is not available from the importedBlocks prop.
+  </div>
+</DocumentFragment>
+`;

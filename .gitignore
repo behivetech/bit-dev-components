@@ -1,0 +1,23 @@
+#dependencies
+.bit/
+.bitmap
+.pnp.js
+/.pnp
+node_modules/
+pnpm-lock.yaml
+
+#bulds
+public/
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+.env*
+
+# Optional eslint cache
+.eslintcache
+
+#IDE
+.idea/

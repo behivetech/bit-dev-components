@@ -1,0 +1,10 @@
+---
+description: 'A CmsBlocks component.'
+labels: ['CMS', 'blocks']
+---
+
+import { CmsBlocks } from './cms-blocks';
+
+## React Component for rendering CMS Blocks
+Blocks are custom components created to display whatever is needed in the UI. These can be any matter of things such as a simple header or footer to display what is necessary for that part of the UI layout or they can be full micro-frontend applicaitons to diplay data coming from an API. The information coming from the cmsParams prop passed into the CmsProvider determines what blocks will be displayed within a CmsArea component. This component will never be used directly by a developer unless a custom component is created to replace the functionality of the `<CmsArea ... />` component. For more details, check out the documents provided in the `<CmsProvider />` component.
+

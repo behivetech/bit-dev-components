@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with the correct content and attributes 1`] = `
+<DocumentFragment>
+  <div
+    class="cms-block-missing"
+    role="button"
+    style="background-color: rgb(153, 0, 0); color: rgb(255, 255, 255);"
+  >
+    COMPONENT IMPORT ERROR: The mockMissingComponent Componpent is not available from the importedBlocks prop.
+  </div>
+</DocumentFragment>
+`;

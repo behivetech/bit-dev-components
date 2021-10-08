@@ -1,0 +1,86 @@
+---
+description: 'A CmsProvider component.'
+labels: ['cms provider', 'react', 'provider']
+---
+
+import { CmsProvider } from './cms-provider';
+
+## React Component for rendering a React Provider for React's context
+This provider should wrap the entire app so all child CMS components can access the `cmsParams` and other functionality from the context passed down from this [React provider](https://reactjs.org/docs/context.html). For instance, in a Next.js project, it should utilize the [`_app.tsx`](https://nextjs.org/docs/advanced-features/custom-app) component which is utilized on every page in the Next.js framework. This component requires props for `children` and `cmsParams`. The `cmsParams` prop is an object that defines params to be used for layouts, areas, blocks and any component props needed for a block level component.
+
+Here's a simple code block on how to use the components.
+
+```jsx
+// Custom components created by the developer
+const Header = () => <h1 className="header">I'm a header</h1>
+const Footer = () => <footer className="footer">I'm a footer</footer>
+const MainTitle = () => <h2 className="main-title">I'm the Main Title</h2>
+const Aside = ({sideNav}) => (
+    <aside>
+        <ul>
+            {sideNav.map(({label, url}) => <li key={label}><a href={url}>{label}</a></li>)}
+        </ul>
+    </aside>
+)
+const Section = ({sectionNumber}) => <section>I'm a section {sectionNumber}</section>
+
+// Objects defining the specific components needed within an area
+const headerImportedComopnents = {Header}
+const footerImportedComopnents = {Footer}
+const mainImportedComopnents = {Section, Aside}
+
+const cmsParams = {
+    areas: {
+        header: {blocks: [{componentName: 'Header'}]}
+        footer: {blocks: [{componentName: 'Footer'}]}
+        main: {blocks: [
+            {componentName: 'Section', componentProps: {sectionNumber: 1}}
+            {componentName: 'Section', componentProps: {sectionNumber: 2}}
+            {componentName: 'Aside', componentProps: {sideNav: [
+                {label: 'Link 1', url: 'https://www.somewhere1.com'}
+                {label: 'Link 2', url: 'https://www.somewhere2.com'}
+            ]}}
+        ]}
+    }
+}
+
+export default function MyPageComponent() {
+    return (
+        <CmsProvider cmsParams={cmsParams}>
+            <div className="my-page-component">
+                <header className="my-page-component__header">
+                    <CmsArea name="header" importedComponents={headerImportedComopnents} />
+                </header>
+                <main className="my-page-component__main">
+                    <CmsArea name="main" importedComponents={mainImportedComopnents} />
+                </main>
+                <CmsArea name="footer" importedComponents={footerImportedComopnents} />
+            </div>
+        </CmsProvider>
+    );
+}
+
+```
+
+In this example, everything is wrapped in the `CmsProvider` so the correct context can be passed down to the `CmsBlocks` component. The CmsArea component passes its name prop down to the `CmsBlocks` component which in turn will use that as a key to pull the params out of the CmsParams specific to that area. It will look at the blocks key which should contain an array of params for the Blocks. The component name tells the Block which component should be pulled from the object of imported components (headerImportedComopnents, footerImportedComopnents, mainImportedComopnents). The componentProps key passes in any props defined as its value. The above code should render the following HTML...
+
+```html
+<div class="my-page-component">
+    <header>
+        <h1 class="my-page-component__header">I'm a header</h1>
+    </header>
+    <main class="my-page-component__main">
+        <section>I'm a section 1</section>
+        <section>I'm a section 2</section>
+        <aside>
+            <ul>
+                <li><a href="https://www.somewhere1.com">Link 1</a></li>
+                <li><a href="https://www.somewhere2.com">Link 2</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer class="footer">I'm a footer</footer>
+</div>
+```
+
+Typically the `cmsParams` would come from some sort of API (see upcomoing example project) to handle the CRUD operations for the CMS. In a Next.js project, the Static Generation function, `getStaticProps`,  or SSR function, `getServerSideProps` could be used at the page level in efforts to reduce network calls and less work for the client side browser.

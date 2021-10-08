@@ -1,0 +1,28 @@
+---
+description: 'A CmsArea component.'
+labels: ['label1', 'label2', 'label3']
+---
+
+import { CmsArea } from './cms-area';
+
+## React Component for rendering out Blocks specific to this CmsArea
+The CmsArea component defines an area where CmsBlocks are rendered. A CmsBlock renders a custom component which could be anything from a table to display data, to a simple area to display a headline. The CmsProvider provides the context to determine what goes within these areas. An example of this context would look like this,
+
+```js
+{
+    cmsParams: {
+        areas: {
+            header: {blocks: [
+                {componentName: 'Header', componentProps: {headline: 'A Title For The Site', menu: ['data for the menu in the header']}}
+            ]}
+            area2: {blocks: [
+                {componentName: 'BlockOne', componentProps: {headline: 'A Title For A Table'}}
+                {componentName: 'BlockTwo', componentProps: {data: ['data to be listed in a table']}}
+            ]}
+        }
+    }
+}
+
+```
+
+The CmsParams created are completely up to the developer based on what areas they want to render components, what components are used within areas, and what props they want to use for those components. Ideally this would be stored in a database used through an API which would be interacted with by the CMS component tools provided in this library. For more details, check out the documents provided in the `<CmsProvider />` component.
