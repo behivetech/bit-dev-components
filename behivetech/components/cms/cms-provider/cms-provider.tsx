@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export type ComponentPropsType = {[propName: string]: any}
 
-type BlockType = {
+export type BlockType = {
     /**
      * Name of component to be imported
      */
@@ -20,7 +20,7 @@ export type BlocksType = {
     blocks: BlockType[]
 }
 
-type CmsParamsType = {
+export type CmsParamsType = {
     /**
      * keys are the area name which contains the blocks that go within an area.
      */
@@ -32,7 +32,7 @@ type CmsParamsType = {
     },
 }
 
-type ContextType = {
+export type ContextType = {
     /**
      * Adds a new block to an area
      */
@@ -76,7 +76,7 @@ type ContextType = {
     updateBlockComponent: (areaName: string, index: number, componentProps: ComponentPropsType) => void;
 }
 
-interface CmsCallbackInterface extends CmsParamsType {
+export interface CmsCallbackInterface extends CmsParamsType {
     onFailure: () => void;
     onSuccess: (cmsParams?: CmsParamsType) => CmsParamsType | undefined;
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Extending the HTMLAttributes for HTMLDivElement so all attributes of div can be passed in.
-interface CmsBlockMissingProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface CmsBlockMissingProps extends React.HTMLAttributes<HTMLDivElement> {
     /**
      * name of component that was missing
      */

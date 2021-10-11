@@ -65,7 +65,8 @@
    **/
   "teambit.workspace/variants": {
     "{envs/**}, {extensions/**}, {generator/**}": {
-      "teambit.harmony/aspect": {}
+      "teambit.harmony/aspect": "{}",
+      "teambit.react/react": "-",
     },
     /**
      * "*" is a special rule which applied on all components in the workspace.
